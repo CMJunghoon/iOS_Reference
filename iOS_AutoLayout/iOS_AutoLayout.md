@@ -10,8 +10,10 @@
 
 ### 1. 전부 고정값으로 아무런 고려 하지 않는 경우
 
-![auto_01.png](https://raw.githubusercontent.com/CMJunghoon/Resume/master/2019/10/23-16-35-44-auto_01.png)iPhone 8 사이즈 기준으로 개발자가 고정값으로 진행 한다면 위 그림과 같은 결과물이 나타나게 됩니다.  
-(극단적 예시)  
+Phone 8 사이즈 기준으로 개발자가 고정값으로 진행 한다면 위 그림과 같은 결과물이 나타나게 됩니다. 
+(극단적 예시)
+
+![auto_01.png](https://raw.githubusercontent.com/CMJunghoon/Resume/master/2019/10/23-16-35-44-auto_01.png)
 
 ### 2. 고정된 크기의 가운데 컨텐츠을 고정하고, 나머지 부분을 가변으로 한 경우
 
@@ -24,3 +26,5 @@
 ### 4. 상단,하단 값 고정하고, 버튼, 텍스트 이미지 크기를 가변으로 한 경우.
 
 ![auto_04.png](https://raw.githubusercontent.com/CMJunghoon/Resume/master/2019/10/23-16-36-13-auto_04.png)
+
+[출처](https://brunch.co.kr/@zalhanilll/406)

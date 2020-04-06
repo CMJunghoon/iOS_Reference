@@ -4,7 +4,7 @@
 
 ### Code Layout
 
-띄어쓰기
+#### 띄어쓰기
 
 * 타입은 한칸 공백을 둡니다.
 
@@ -20,7 +20,7 @@
   let info: [String: Any]
   ```
 
-줄바꿈
+#### 줄바꿈
 
 * 함수의 코드가 길어지면 파라미터 기준으로 줄바꿈합니다.
   
@@ -65,7 +65,7 @@
   })
   ```
 
-주석 & Color 값
+#### 주석 & Color 값
 
 * UIColor을 확장하여 명확하게 컬러 이름을 구분합니다.
 
@@ -105,7 +105,7 @@
   backgroundColor = .darkLightGray
   ```
 
-Enum / Codable
+#### Enum / Codable
 
 * `Codable` 에서 `enum`을 사용할 때, 아래와 같이 사용한다.
   
@@ -115,7 +115,7 @@ Enum / Codable
     case good = "good"
     case stop = "stop"
     case reStart = "restart"
-    
+  
     func text() -> String {
       switch self {
       case .revoke:
@@ -128,7 +128,7 @@ Enum / Codable
         return "재가입"
       }
     }
-    
+  
     func backgroundColor() -> UIColor {
       switch self {
       case .revoke:
@@ -152,5 +152,51 @@ Enum / Codable
       titleLabel.backgroudColor = item.backgroundColor()
   }
   ```
+
+#### `self` 사용
+
+* 필요할때만 self을 사용합니다.
+
+* 클로져 안에서 `self`을 돋보이게 하고, 장황하게 사용하는것을 피하기 위해서 입니다.
+  
+  ```swift
+  private class History {
+      var events: [Event]
+  
+      func rewrite() {
+          events = []
+      }
+  }
+  ```
+  
+  ```swift
+  class History {
+    let event: String
+    
+    init(event: String) {
+      self.event = event
+    }
+  }
+  ```
+
+
+
+#### 클로져 사용
+
+* 메모리 참조을 피하기 위해서 `[weak self] / [unowned  self]`을 사용한다.
+  
+  ```swift
+  UIView.animate(withDuration: 3) { [weak self] in
+        self?.view.frame = .zero
+  }
+  ```
+  
+  ```swift
+  UIView.animate(withDuration: 3) { [unowned self] in
+        self.view.frame = .zero
+  }
+  ```
+  
+  * [참고 사이트](https://outofbedlam.github.io/swift/2016/01/31/Swift-ARC-Closure-weakself/)
 
 
